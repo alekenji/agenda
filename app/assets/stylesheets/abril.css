@@ -1,0 +1,27 @@
+
+.center {
+	text-align: center;
+}
+
+.table_center {
+	padding-left: 30%;
+	width: 500px;
+	text-align: center;
+}
+
+input[type="text"] {
+    width: 350px;
+}
+
+.todotable {
+	max-width: 500px;
+}
+
+.tododone {
+	text-decoration: line-through;
+	color: #999;
+}
+
+.todoremove {
+	width: 35px;
+}

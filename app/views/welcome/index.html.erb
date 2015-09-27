@@ -1,0 +1,45 @@
+<br /><br />
+<div ng-controller="myCtrl">
+	
+	<div class="center">
+		Tarefas : <input type="text" ng-model="m.newtask" ng-keyup="newtask_keyup($event)" 
+		                  placeholder="digite sua tarefa e tecle enter " autofocus >
+	</div>
+	<br/><br/>
+
+	<!-- tarefas -->
+	<div class="table_center">
+
+	    <table class="table table-striped todotable">
+	        <tr ng-repeat="todo in m.todos">
+	          <td ng-class="{tododone: todo.done}">{{todo.task}}</td>
+	          <td class="todoremove">
+	            <a href ng-click="m.remove($index)"><i class="icon-trash"></i></a>	         
+	          </td>
+	        </tr>
+	    </table>
+
+		<div ng-show="m.showAgendar">
+			<input type="button" class="btn btn-default" value=" Agendar " ng-click="m.schedule()">
+		</div>
+
+	</div>
+	<br/><br/>
+	<br/><br/>
+
+	<!-- agenda -->
+	<div class="table_center">
+
+	    <table class="table table-striped todotable">
+	        <tr ng-repeat="tarefa in m.agenda">
+	          <td ng-class="{tododone: todo.done}">{{tarefa.hours}} - {{tarefa.task}}</td>
+	        </tr>
+	    </table>
+
+		<div ng-show="m.showClear">
+			<input type="button" class="btn btn-default" value=" Limpar " ng-click="m.clear()">
+		</div>
+		
+	</div>
+
+</div>
